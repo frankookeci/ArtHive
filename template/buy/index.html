@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style1.css">
+
+  <div class="nav">
+
+    <div class="navDiv">
+      <div class="homeHover">
+        <a href="#home_area">Home</a>
+      </div>
+      <div class="aboutHover"><a href="#about_area">About</a>
+      </div>
+      <div class="catalogeHover"><a href="#catalog_area">Catalog</a>
+      </div>
+      <div class="buyHover">
+        <a href="#" id="BuyPage" onclick="toggle()">Buy</a>
+      </div>
+      <div class="sellHover">
+        <a href="#" id="SellPage" onclick="toggle2()">Sell</a>
+      </div>
+      <div class="contactHover">
+        <a href="#contact_area">Contact</a>
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+  </div>
+
+
+<body class="">
+
+
+  <div class="container">
+    <header id="Koka">
+      <h1></h1>
+      <div class="shopping">
+        <img src="image/shopping.svg">
+        <span class="quantity">0</span>
+      </div>
+    </header>
+
+    <div class="body2">
+      <!-- <header> -->
+      <div class="likes">
+        <img src="./image/free-heart-icon-492-thumb.png" alt="">
+        <span class="quantity2">0</span>
+      </div>
+      <!-- </header>   -->
+    </div>
+    <button class="right-button" id="btnl"onclick="moveItems('right')">〈</button>
+        
+    <!-- 
+              <button class="left-button"id="btnr" onclick="moveItems('left')">></button> -->
+              <button class="left-button"id="btnr" onclick="moveItems('left')">〉</button>
+              
+              <button class="l2">〈</button>
+              <button class="r2">〉</button>
+            <div class="list2"></div>
+
+
+            <div class="filter">
+              <!-- Klea -->
+              <button onclick="filterImages('all')">All</button>
+              <button onclick="filterImages('category1')">Painting</button>
+              <button onclick="filterImages('category5')">Photography</button>
+              <button onclick="filterImages('category4')">Pottery</button>
+              <button onclick="filterImages('category3')">Quilling</button>
+              <button onclick="filterImages('category2')">Sculpture</button>
+
+
+
+            </div>
+
+            <hr>
+
+            <div class="list">
+
+            </div>
+
+  </div>
+
+
+  <div class="card">
+    <h1>YOUR CARD</h1>
+    <ul class="listCard">
+    </ul>
+    <div class="checkOut">
+      <div class="total">Total: $0</div>
+      <div class="closeShopping"></div>
+
+      <!-- <button class="checkout" onclick="openPage()">CHECK OUT</button> -->
+      <button class="checkout" id="checkout1">CHECK OUT</button>
+      <!-- <button id="continue-button">Continue</button>
+              <button>dafdfa</button>
+             <button onclick="addToCard(0)">dfafa</button> -->
+
+      <div id="overlay"></div>
+    </div>
+  </div>
+
+
+  <div class="card2">
+    <h1>Likes</h1>
+    <ul class="listCard2">
+    </ul>
+    <div class="checkOut2">
+      <div class="total2">Total: $0</div>
+      <div class="closelikes"></div>
+
+      <button class="checkout2" onclick="openPage()">CHECK OUT</button>
+      <!-- <button onclick="addToCard(0)">dfafa</button>
+            <button id="continue-button">Continue</button> -->
+
+
+      <div id="overlay2"></div>
+    </div>
+  </div>
+
+
+  <script src="app.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+<!-- <script>
+  var continueButton = document.getElementById("continue-button");
+  continueButton.addEventListener("click", function() {
+    window.open("display.php", "_blank");
+  });
+</script> -->
+<script>
+  // Get the button element
+  var checkoutButton = document.getElementById('checkout1');
+
+  // Add a click event listener to the button
+  checkoutButton.addEventListener('click', function () {
+    // Redirect the user to the new HTML page
+    window.location.href = 'display.php';
+  });
+</script>
+
+</html>

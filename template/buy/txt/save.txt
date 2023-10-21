@@ -1,0 +1,57 @@
+<style>
+      /* Add your custom CSS styles here */
+      .item {
+         display: flex;
+         align-items: center;
+         border: 1px solid #ccc;
+         padding: 10px;
+         margin-bottom: 20px;
+      }
+
+      .item img {
+         width: 100px;
+         height: auto;
+         margin-right: 10px;
+      }
+   </style>
+</head>
+<body>
+   
+   <div class="container">
+
+   <?php
+   $sname = "localhost";
+   $uname = "root";
+   $pass = "";
+   $db_name = "buy_prova";
+
+   // Create a new MySQLi instance
+   $conn = mysqli_connect($sname, $uname, $pass, $db_name);
+   session_start();
+   $email = 'era@gmail.com';
+
+   $select_items = mysqli_query($conn, "SELECT id, name, image, price, email FROM buyy WHERE email = '$email'") or die('Query failed');
+
+   if(mysqli_num_rows($select_items) > 0){
+      while($item = mysqli_fetch_assoc($select_items)){
+         $id = $item['id'];
+         $name = $item['name'];
+         $image = $item['image'];
+         $price = $item['price'];
+         $email = $item['email'];
+
+         // Display the item information with custom styles
+         echo "<div class='item'>";
+         echo "<img src='./image/$image' alt='Item Image'>";
+         echo "<div>";
+         echo "<h3>ID: $id</h3>";
+         echo "<p>Name: $name</p>";
+         echo "<p>Price: $price</p>";
+         echo "<p>Email: $email</p>";
+         echo "</div>";
+         echo "</div>";
+      }
+   } else {
+      echo "<p>No items found with the email 'era@gmail.com'.</p>";
+   }
+   ?>
